@@ -9,7 +9,8 @@ private:
 public:
     ResourceManager() : res(new Resource()) {}
     double get() { return res->get(); }
-    ResourceManager(const ResourceManager& rm):res(rm.res) {}
+    ResourceManager(const ResourceManager& rm) : res(rm.res) {} 
     ~ResourceManager() { delete res; }
+
     ResourceManager& operator=(const ResourceManager& rm) { res = rm.res; return *this; }
 };
